@@ -4,21 +4,23 @@
 <input type="file" (change)="fileChangeEvent($event)" />
 
 <div class="moocow_cover" [class.moocow]="fired">
+  <div class="moocow_holder">
 
-<image-cropper 
-    [imageChangedEvent]="imageChangedEvent"
-    [maintainAspectRatio]="true"
-    [aspectRatio]="1 / .681818"
-    [resizeToWidth]="1100"
-    [onlyScaleDown]="true"
-    format="png"
-    (imageCroppedBase64)="imageCropped($event)"
-    (imageLoaded)="imageLoaded()"
-    (loadImageFailed)="loadImageFailed()"
- style="border: solid 1px red; width: calc(100% - 12px);"></image-cropper>
+    <image-cropper 
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="1 / .681818"
+        [resizeToWidth]="1100"
+        [onlyScaleDown]="true"
+        format="png"
+        (imageCroppedBase64)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (loadImageFailed)="loadImageFailed()"
+    style=""></image-cropper>
 
-<img [src]="croppedImage" style="width: 150px; height: auto;" />
+    <img [src]="croppedImage" style="width: 150px; height: auto;" />
 
+  </div>
 </div>
 
 
